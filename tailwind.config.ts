@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -72,9 +72,18 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        'hero-pattern': "url('public/aurora-bg-1.jpg')"
+      },
+      backgroundColor: {
+        'btn-primary': "bg-purple-800 hover:bg-purple-600"
+      }
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),
+  ],
 } satisfies Config
+
+
 
 export default config
