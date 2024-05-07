@@ -7,6 +7,7 @@ import { ArrowRightCircle } from "lucide-react";
 
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const font = Poppins({
     subsets: ['latin'],
@@ -17,15 +18,15 @@ export const Hero = () => {
     return (
         <div className="bg-[url('/aurora-bg-1.jpg')] flex flex-col items-center justify-center py-10">
             <Navbar />
-            <div className="mx-auto text-center">
+            <div className="py-10 mx-auto text-center">
                 <HeroHighlight className={font.className}>
                     <h1 className="text-2xl sm:text-5xl md:text-7xl font-normal text-center mt-12 mb-5 text-white mx-auto">
                         Graduate School Applications
                     </h1>
-                    <h1 className="text-2xl sm:text-5xl md:text-8xl font-bold text-center mb-7 text-white mx-auto"><Highlight>revolutionized by AI</Highlight></h1>
+                    <h1 className="text-2xl sm:text-5xl md:text-8xl font-bold text-center mb-7 text-white mx-auto"><Highlight>&nbsp;revolutionized by AI&nbsp;</Highlight></h1>
                 </HeroHighlight>
-                <p className="w-1/2 mx-auto text-white ">
-                    {appName} is an AI copilot to Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, distinctio similique voluptatibus facilis magnam, odio dicta eaque ex ad cum qui odit est, aliquid numquam. Dolores quos vel enim possimus!
+                <p className={cn("w-8/12 mx-auto text-white ", font.className)}>
+                    {appName} uses AI to revolutionize your graduate school application process, optimizing your essays and enhancing your recommendations to boost your admission chances. With personalized, real-time feedback, Aurora simplifies and improves your application journey.
                 </p>
                 <div className="mt-10">
                     <Button size='lg' className=" bg-purple-800">
