@@ -48,7 +48,7 @@ const SignUpPage = () => {
     }
 
     return (
-        <CardWrapper headerLabel="Register account" description="Sign up with Aurora" backButtonLabel="Already have an account? Login" backButtonHref="/login" showSocial>
+        <CardWrapper headerLabel="Register account" description="Sign up with Aurora" backButtonLabel="Already have an account? Login" backButtonHref="/api/login" showSocial>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="space-y-2">
