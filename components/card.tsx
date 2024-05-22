@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card"
 import { Social } from "./socials";
 import { BackButton } from "./back-button";
+import { cn } from "@/lib/utils";
 
 interface CardWrapperProps {
     children: React.ReactNode;
@@ -18,15 +19,16 @@ interface CardWrapperProps {
     description: string;
     showSocial?: boolean;
     className?: string;
+    showGrid?: boolean
 }
 export const CardWrapper = (
     {
-        children, headerLabel, description, backButtonLabel, backButtonHref, showSocial, className
+        children, headerLabel, description, backButtonLabel, backButtonHref, showSocial, className, showGrid
     }: CardWrapperProps) => {
     return (
-        <Card className="w-full grid grid-cols-2">
-            <div className="bg-[url('/aurora-bg-1.jpg')] rounded-tl-lg rounded-bl-lg bg-no-repeat bg-cover"></div>
-            <div>
+        <Card className={cn(showGrid ? 'w-full grid grid-cols-2' : 'w-[460px]')}>
+            <div className={cn(showGrid ? "bg-[url('/aurora-bg-1.jpg')] rounded-tl-lg rounded-bl-lg bg-no-repeat bg-cover" : 'hidden')}></div>
+            <div className={cn(!showGrid && 'flex flex-col justify-center items-center text-center')}>
                 <CardHeader>
                     <CardTitle>{headerLabel}</CardTitle>
                     <CardDescription>{description}</CardDescription>

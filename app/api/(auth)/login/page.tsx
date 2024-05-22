@@ -51,6 +51,7 @@ const LoginForm = () => {
             backButtonLabel="Don't have an account?"
             description="Log in to your account."
             showSocial
+            showGrid
         >
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

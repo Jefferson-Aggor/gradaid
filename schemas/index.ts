@@ -8,8 +8,7 @@ export const LoginSchema = z.object({
 });
 
 export const RegisterSchema = z.object({
-    firstname: z.string().min(1, { message: "Firstname is required" }),
-    lastname: z.string().min(1, { message: "Lastname is required" }),
+    name: z.string().min(1, { message: "Name is required" }),
     // contact: z.string(),
     // dateofbirth: z.string().date(),
     email: z.string().email(),

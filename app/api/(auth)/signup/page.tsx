@@ -28,8 +28,7 @@ const SignUpPage = () => {
     const form = useForm<z.infer<typeof RegisterSchema>>({
         resolver: zodResolver(RegisterSchema),
         defaultValues: {
-            firstname: "",
-            lastname: "",
+            name: "",
             email: "",
             password: ""
         }
@@ -48,38 +47,23 @@ const SignUpPage = () => {
     }
 
     return (
-        <CardWrapper headerLabel="Register account" description="Sign up with Aurora" backButtonLabel="Already have an account? Login" backButtonHref="/api/login" showSocial>
+        <CardWrapper headerLabel="Register account" description="Sign up with Aurora" backButtonLabel="Already have an account? Login" backButtonHref="/api/login" showSocial showGrid>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="space-y-2">
-                        <div className="grid grid-cols-2 gap-x-2 ">
-                            <FormField
-                                control={form.control}
-                                name="firstname"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Firstname</FormLabel>
-                                        <FormControl>
-                                            <Input type='text' {...field} disabled={isPending} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="lastname"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Lastname</FormLabel>
-                                        <FormControl>
-                                            <Input type='text' {...field} disabled={isPending} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
+                        <FormField
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Name</FormLabel>
+                                    <FormControl>
+                                        <Input type='text' {...field} disabled={isPending} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
                         <FormField
                             control={form.control}
                             name="email"
